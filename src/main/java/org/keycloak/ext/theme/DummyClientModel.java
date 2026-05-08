@@ -47,6 +47,9 @@ public class DummyClientModel {
                     return realm;
                 case "getProtocol":
                     return "openid-connect";
+                case "getBaseUrl":
+                case "getRootUrl":
+                    return "https://preview-client.example/app";
                 case "isEnabled":
                 case "isPublicClient":
                 case "isStandardFlowEnabled":

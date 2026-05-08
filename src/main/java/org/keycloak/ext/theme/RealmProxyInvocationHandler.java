@@ -13,12 +13,13 @@ public class RealmProxyInvocationHandler implements InvocationHandler {
 
     private final RealmModel parent;
 
+    @SuppressWarnings("rawtypes")
     private List<MethodHandler> methodHandlers = List.of(
             new BooleanMethodHandler(),
             new StringMethodHandler()
     );
 
-    private final MultivaluedMap<String, String> queryParameters;
+    protected final MultivaluedMap<String, String> queryParameters;
 
     public RealmProxyInvocationHandler(KeycloakSession session) {
         this.parent = session.getContext().getRealm();
@@ -26,6 +27,7 @@ public class RealmProxyInvocationHandler implements InvocationHandler {
     }
 
     @Override
+    @SuppressWarnings("rawtypes")
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         if (args == null) {
             for (MethodHandler h : methodHandlers) {

@@ -63,18 +63,25 @@ public class DummyUserModel implements UserModel {
     }
 
     @Override
-    public String getFirstAttribute(String s) {
-        return null;
+    public String getFirstAttribute(String name) {
+        List<String> values = getAttributes().get(name);
+        return values != null && !values.isEmpty() ? values.get(0) : null;
     }
 
     @Override
-    public Stream<String> getAttributeStream(String s) {
-        return null;
+    public Stream<String> getAttributeStream(String name) {
+        List<String> values = getAttributes().get(name);
+        return values != null ? values.stream() : Stream.empty();
     }
 
     @Override
     public Map<String, List<String>> getAttributes() {
-        return null;
+        return Map.of(
+            "firstName", List.of("John"),
+            "lastName", List.of("Doe"),
+            "email", List.of("john.doe@example.com"),
+            "username", List.of("johndoe")
+        );
     }
 
     @Override
