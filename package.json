@@ -1,0 +1,37 @@
+{
+  "name": "@edewit/theme-preview",
+  "version": "0.0.1",
+  "description": "Keycloak extension to preview custom login themes",
+  "main": "index.js",
+  "bin": {
+    "theme-preview-install": "bin/theme-preview-install.js"
+  },
+  "files": [
+    "index.js",
+    "lib/theme-preview.jar",
+    "bin/theme-preview-install.js",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "mvn -q package -DskipTests && node scripts/copy-jar.js",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "keycloak",
+    "theme",
+    "preview"
+  ],
+  "author": "edewit",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edewit/playground.git",
+    "directory": "kc-ext/theme-preview"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

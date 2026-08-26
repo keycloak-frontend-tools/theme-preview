@@ -1,0 +1,8 @@
+src/
+target/
+.settings/
+.classpath
+.project
+META-INF/
+scripts/
+pom.xml

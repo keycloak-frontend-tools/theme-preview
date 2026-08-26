@@ -1,6 +1,21 @@
 # Extension to help preview custom themes
 
-Build and copy to Keycloak:
+Install from npm:
+
+```
+npm install @edewit/theme-preview
+KEYCLOAK_HOME=/path/to/keycloak npx theme-preview-install
+```
+
+You can also pass the Keycloak directory as an argument:
+
+```
+npx theme-preview-install /path/to/keycloak
+```
+
+The installer copies `theme-preview.jar` to `$KEYCLOAK_HOME/providers/`.
+
+Build and copy to Keycloak from source:
 
 ```
 mvn package
