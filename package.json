@@ -28,8 +28,7 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/edewit/playground.git",
-    "directory": "kc-ext/theme-preview"
+    "url": "git+https://github.com/keycloak-frontend-tools/theme-preview.git"
   },
   "engines": {
     "node": ">=18"
