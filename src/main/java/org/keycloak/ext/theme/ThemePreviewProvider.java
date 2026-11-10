@@ -105,6 +105,7 @@ public class ThemePreviewProvider implements RealmResourceProvider {
 
             // OAuth/Consent
             new Page("oauth-grant", "OAuth - consent/grant", l -> {
+                l.setClientSessionCode("preview-session-code");
                 l.setAccessRequest(List.of());
                 return l.createOAuthGrant();
             }),
